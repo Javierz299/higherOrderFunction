@@ -43,3 +43,15 @@ const filteredNames = filter(myNames, function(name) {
   
 });
 console.log(filteredNames); // => ['Rich', 'Ray']
+
+
+
+function hazardWarningCreator(typeOfWarnging){
+  let warningCounter = 0;
+
+  return function(location){
+    warningCounter++;
+  };
+
+
+}
