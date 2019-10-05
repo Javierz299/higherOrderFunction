@@ -19,17 +19,21 @@ function goodBye(){
 
 
 const myNames = ['Rich','Joe','Bhaumk','Ray'];
-//////////////////fn = function(name) => fn(arguement)
+//////////////////fn = function(name) => fn(parameter)
 function filter(arr,fn){
-  let newArray = [];//function(name)
+  let newArray = [];
+
   arr.filter(el => {
-    if(fn(el)){
+  //el[0] === 'R' .log(el[0]) => R,J,B,R
+    //console.log(el[0]);
+    if(fn(el)){ //fuction(name) => function(el)
+      //console.log(el);
       newArray.push(el);
     }
   });
-
-
   return newArray;
+
+  
 }
 // eslint-disable-next-line indent
                                     ////function(parameter)
