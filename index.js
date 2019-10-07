@@ -76,3 +76,63 @@ const floodWarnging = hazardWarningCreator('Flooding across Road');
 
 //iceWarning('Hall RD and West');
 //iceWarning('Hall RD and King');
+
+
+const danceMoves = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+function twoStep(arr){
+  let toTheRight = [];
+  let ambiTurner = [];
+  let total = [];
+
+  arr.filter(moveSet => {
+    if(moveSet[0] < 0 || moveSet[1] < 0){
+      toTheRight.push(moveSet);
+    } else {
+      ambiTurner.push(moveSet);
+    }
+  });
+
+  ambiTurner.map(steps => {
+    total.push(steps[0] + steps[1]);
+  });
+
+  total.forEach(move => {
+    if(total[0] === move){
+      console.log(`Movement #1: ${move} steps`);
+    } else if(total[1] === move){
+      console.log(`Movement #2: ${move} steps`);
+    } else if(total[2] === move){
+      console.log(`Movement #3: ${move} steps`);
+    } 
+
+
+  });
+  console.log(total);
+  console.log(ambiTurner);
+}
+
+//twoStep(danceMoves);
+
+
+
+let codedMessage = 'noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest';
+
+function decode(string){
+  let arr = string.split(' ');
+
+  
+  arr.reduce((acc,str) => {
+
+    if(str.length === 3){
+      console.log(acc + ' ' + str);
+    } else {
+      console.log(str[str.length - 1].toUpperCase());
+    }
+    
+  }, '');
+  
+
+}
+
+decode(codedMessage);
